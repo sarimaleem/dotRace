@@ -23,7 +23,6 @@ public class Track {
 	
 	public boolean movePlayer(String color, int locs) {
 		 int currentPos = getPlayerPos(color);
-		 System.out.println(currentPos);
 		 if(currentPos + locs > 31) { 
 			 tiles[currentPos].change(color, false);
 			 tiles[31].change(color, true);
