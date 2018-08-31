@@ -1,4 +1,3 @@
-
 public class Die {
 	
 	int face;

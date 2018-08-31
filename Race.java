@@ -11,10 +11,10 @@ public class Race {
 	static Map<String, Player> players = new HashMap<String, Player>();
 	
 	public static void main(String[] args) {
-		utilMethods.printInstructions();
+		printInstructions();
 		Track track = new Track();
 		System.out.println();
-		track.dispTrack();
+		System.out.println(track.toString());
 		players.put("red", redPlayer);
 		players.put("green", greenPlayer);
 		players.put("yellow", yellowPlayer);
@@ -34,8 +34,7 @@ public class Race {
 			}
 			
 			System.out.println("Which Player would like to roll the dice?");
-			String input = in.nextLine();
-			input = input.trim();
+			String input = in.nextLine().trim();
 			
 			while(!(input.equals("red") || input.equals("green") || input.equals("yellow") || input.equals("blue"))) {
 				System.out.println("Sorry that input is not valid, please input a real die");
@@ -50,15 +49,15 @@ public class Race {
 			
 			if(track.movePlayer(input, players.get(input).roll())) {
 				
-				utilMethods.printSpaces();
-				track.dispTrack();
+				printSpaces();
+				System.out.println();
 				System.out.println("player " + input + " rolled a "  + players.get(input).getNumber());
 				System.out.println("congratulations, player " + input + " won");
 				break;
 			}
 			
-			utilMethods.printSpaces();
-			track.dispTrack();
+			printSpaces();
+			System.out.println(track);
 			System.out.println("player " + input + " rolled a "  + players.get(input).getNumber());
 			
 		}
@@ -76,5 +75,18 @@ public class Race {
 		greenPlayer.reset();
 		yellowPlayer.reset();
 		bluePlayer.reset();
+	}
+	
+	public static void printSpaces() {
+		for(int i = 0; i < 100; i++) { 
+			System.out.println();
+		}
+	}
+	
+	public static void printInstructions() {
+		System.out.println("In this game you will try to get to the end as fast as you can.");
+		System.out.println("Roll the dice once per turn"); 
+		System.out.println("In order to roll input the color that you are, if you are red, put in Red or r or red");
+		System.out.println("Enjoy!");
 	}
 }

@@ -1,4 +1,3 @@
-
 public class Tile {
 	private boolean red;
 	private boolean yellow;

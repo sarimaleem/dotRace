@@ -1,4 +1,3 @@
-
 public class Track {
 	private Tile[] tiles;
 	public Track() {
@@ -15,10 +14,12 @@ public class Track {
 		tiles[0].change("b", true);
 	}
 	
-	public void dispTrack() {
+	public String toString() {
+		String t = "";
 		for(int i = 0; i < tiles.length; i++) {
-			System.out.println(tiles[i].toString());
+			t += tiles[i].toString() + "\n";
 		}
+		return t;
 	}
 	
 	public boolean movePlayer(String color, int locs) {
