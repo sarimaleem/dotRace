@@ -51,22 +51,22 @@ public class Tile {
 		if(getBlue())
 			s+="B";
 		else
-			s += ".";
+			s += " ";
 		
 		if(getRed())
 			s+="R";
 		else
-			s += ".";
+			s += " ";
 		
 		if(getYellow())
 			s+="Y";
 		else
-			s += ".";
+			s += " ";
 		
 		if(getGreen())
 			s+="G";
 		else
-			s += ".";
+			s += " ";
 		
 		return s;
 	}

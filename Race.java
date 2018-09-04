@@ -53,6 +53,7 @@ public class Race {
 				System.out.println();
 				System.out.println("player " + input + " rolled a "  + players.get(input).getNumber());
 				System.out.println("congratulations, player " + input + " won");
+				System.out.println(track.toString());
 				break;
 			}
 			

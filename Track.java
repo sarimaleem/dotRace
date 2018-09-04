@@ -16,8 +16,11 @@ public class Track {
 	
 	public String toString() {
 		String t = "";
-		for(int i = 0; i < tiles.length; i++) {
-			t += tiles[i].toString() + "\n";
+		for(int i = 0; i<4; i++) {
+			for(int j = 0; j < tiles.length; j++) {
+				t += tiles[j].toString().charAt(i);
+			}
+			t+= "\n";
 		}
 		return t;
 	}
