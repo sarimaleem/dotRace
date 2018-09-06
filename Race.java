@@ -1,18 +1,10 @@
 import java.util.HashMap;
 import java.util.Map;
 
-
-
-//MAKE ALL YOUR VARIABLES PRIVATE DOUBLE CHECK IN THE END.
-//MAKE SURE YOU DO THIS
-//MAKE SURE YOU DO THIS.
-//MAKE SURE YOU DO THIS.
-
-
 public class Race {
 	private Player redPlayer, greenPlayer, bluePlayer, yellowPlayer;
-	Map<String, Player> players;
-	Track track;
+	private Map<String, Player> players;
+	private Track track;
 	
 	public Race() {
 		redPlayer = new Player();
@@ -37,18 +29,7 @@ public class Race {
 		yellowPlayer.reset();
 		bluePlayer.reset();
 	}
-	
-	
-	
-	public String getInstructions() {
-		String instructions  = "";
-		instructions += "In this game you will try to get to the end as fast as you can.\n";
-		instructions += "Roll the dice once per turn.\n"; 
-		instructions += "In order to roll, input the color that you are, if you are red, input red.\n";
-		instructions += "Enjoy!.\n";
-		return instructions;
-	}
-	
+
 	public boolean playerHasRolled(String s) {
 		return players.get(s).hasRolled();
 	}

@@ -21,7 +21,6 @@ public class TextRunner {
 				input = in.nextLine().trim();
 			}
 			
-			
 			if(race.playerHasRolled(input)) {
 				System.out.println("Sorry player " + input + " has already rolled.");
 				System.out.println();
@@ -35,7 +34,7 @@ public class TextRunner {
 				break;
 			}	
 			
-			System.out.println("Player " + input +  " rolled a "  + race.getFace(input) + "\n\n\n\n\n\n\n");
+			System.out.println("Player " + input +  " rolled a "  + race.getFace(input) + "\n\n\n\n\n\n");
 			
 		}
 		

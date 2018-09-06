@@ -12,16 +12,16 @@ public class Tile {
 	}
 	
 	public void change(String color, boolean b) {
-		if(color.equals("r") || color.equals("red") || color.equals("Red"))
+		if(color.equals("r"))
 			red = b;
 		
-		if(color.equals("y") || color.equals("yellow") || color.equals("Yellow"))
+		if(color.equals("y"))
 			yellow = b;
 		
-		if(color.equals("g") || color.equals("green") || color.equals("Green"))
+		if(color.equals("g"))
 			green = b;
 		
-		if(color.equals("b") || color.equals("blue") || color.equals("Blue"))
+		if(color.equals("b"))
 			blue = b;
 	}
 	
