@@ -20,7 +20,7 @@ public class Track {
 			for(int j = 0; j < tiles.length; j++) {
 				t += tiles[j].toString().charAt(i);
 			}
-			t+= "\n";
+			t+= "|\n";
 		}
 		return t;
 	}
@@ -43,28 +43,28 @@ public class Track {
 	public int getPlayerPos(String color) {
 		
 		
-		if(color.contains("red")) {
+		if(color.equals("r")) {
 		for(int i = 0; i < tiles.length; i++) {
 			if(tiles[i].getRed()) 
 				return i;
 			}
 		}
 		
-		if(color.contains("green")) {
+		if(color.equals("g")) {
 			for(int i = 0; i < tiles.length; i++) {
 				if(tiles[i].getGreen()) 
 					return i;
 				}
 		}
 		
-		if(color.contains("blue")) {
+		if(color.equals("b")) {
 			for(int i = 0; i < tiles.length; i++) {
 				if(tiles[i].getBlue()) 
 					return i;
 				}
 		}
 		
-		if(color.contains("yellow")) {
+		if(color.equals("y")) {
 			for(int i = 0; i < tiles.length; i++) {
 				if(tiles[i].getYellow()) 
 					return i;
