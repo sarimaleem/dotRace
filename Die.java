@@ -1,6 +1,6 @@
 public class Die {
 	
-	int face;
+	private int face;
 	
 	public Die() {
 		

@@ -5,6 +5,7 @@ public class TextRunner {
 		
 		Scanner in = new Scanner(System.in);
 		Race race = new Race();
+		
 
 		while(true) {
 			if(race.roundDone()) {
