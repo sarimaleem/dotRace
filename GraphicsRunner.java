@@ -11,9 +11,10 @@ public class GraphicsRunner {
 		
 		GraphicsBoard board = new GraphicsBoard();
 		window.add(board);
-		//GraphicsPlayer g = new GraphicsPlayer();
-		//window.add(g);
-
+//		board.setPos("r", 23);
+//		board.setPos("g", 19);
+//		board.setPos("b", 12);
+		
 	}
 }
 
