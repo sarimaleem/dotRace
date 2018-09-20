@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 public class GraphicsRunner implements MouseListener {
 	
 	static String[][] dieColors;
+	static Race race;
+	
 	public static void main(String[] args)  {
 		
 		dieColors = new String[1200][1000];
@@ -25,7 +27,7 @@ public class GraphicsRunner implements MouseListener {
 		
 		
 		
-		Race race = new Race();
+		race = new Race();
 		JFrame window = new JFrame("Dot Race");
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setSize(1200, 1000);		
@@ -38,6 +40,16 @@ public class GraphicsRunner implements MouseListener {
 	
 	public void mouseClicked(MouseEvent e) {
         System.out.println(e.getX() + " " + e.getY());
+        String playerColor = dieColors[e.getX()][e.getY()];
+        if(playerColor.equals(""))
+        	return;
+        
+        System.out.println(race.getTrack().indexOf("B"));
+        System.out.println(race.getTrack().indexOf("R")-34);
+        System.out.println(race.getTrack().indexOf("Y")-68);
+        System.out.println(race.getTrack().indexOf("G")-102);
+        
+        
      }
 
      public void mousePressed(MouseEvent e) {
