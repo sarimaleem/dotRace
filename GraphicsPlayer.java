@@ -43,6 +43,10 @@ public class GraphicsPlayer {
 		this.pos = pos;
 	}
 	
+	public Color getColor() {
+		return color;
+	}
+	
 	public void drawEllipse(Graphics2D g2D) {
 		circle.setFrame(getX(), getY(), getHeight(), getWidth());
 		g2D.draw(circle);

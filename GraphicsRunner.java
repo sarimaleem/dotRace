@@ -7,6 +7,7 @@ public class GraphicsRunner implements MouseListener {
 	
 	static String[][] dieColors;
 	static Race race;
+	static GraphicsBoard board;
 	
 	public static void main(String[] args)  {
 		
@@ -32,22 +33,35 @@ public class GraphicsRunner implements MouseListener {
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setSize(1200, 1000);		
 		window.setVisible(true);
-		GraphicsBoard board = new GraphicsBoard();
+		board = new GraphicsBoard();
 		window.add(board);
 		board.addMouseListener(new GraphicsRunner());
+		
+
 	}
 	
 	
 	public void mouseClicked(MouseEvent e) {
-        System.out.println(e.getX() + " " + e.getY());
-        String playerColor = dieColors[e.getX()][e.getY()];
-        if(playerColor.equals(""))
-        	return;
         
-        System.out.println(race.getTrack().indexOf("B"));
-        System.out.println(race.getTrack().indexOf("R")-34);
-        System.out.println(race.getTrack().indexOf("Y")-68);
-        System.out.println(race.getTrack().indexOf("G")-102);
+        String playerColor = dieColors[e.getX()][e.getY()];
+        
+        if(race.roundDone())
+        	race.reset();
+        
+        if(playerColor.equals("") || race.raceOver() || race.playerHasRolled(playerColor))
+        	return;
+       
+        
+        
+        
+        
+       if(race.movePlayer(playerColor))
+    	   board.isOver(playerColor);
+       
+       int playerPos = race.getTrack().indexOf(playerColor.toUpperCase()) % 34;
+       board.setPlayerPos(playerColor, playerPos);
+       
+       
         
         
      }

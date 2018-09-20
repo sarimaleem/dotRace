@@ -5,6 +5,7 @@ public class Race {
 	private Player redPlayer, greenPlayer, bluePlayer, yellowPlayer;
 	private Map<String, Player> players;
 	private Track track;
+	private boolean raceOver = false;
 	
 	public Race() {
 		redPlayer = new Player();
@@ -36,9 +37,10 @@ public class Race {
 	
 	public boolean movePlayer(String input) {
 		if(track.movePlayer(input, players.get(input).roll())) {
-			return true;
+			raceOver = true;
+			return raceOver;
 		}
-		return false;
+		return raceOver;
 	}
 	
 	public String getTrack() {
@@ -64,6 +66,10 @@ public class Race {
 			 return "";
 		
 		return string;
+	}
+	
+	public boolean raceOver() {
+		return raceOver;
 	}
 	
 }

@@ -15,9 +15,9 @@ public class GraphicsBoard extends JComponent  {
 	GraphicsPlayer greenPlayer;
 	Map<String, GraphicsPlayer> players = new HashMap<String, GraphicsPlayer>();
 	Map<String, Integer[]> diePos = new HashMap<String, Integer[]>();
-	
-	
-	
+	boolean isOver;
+	String winner;
+	Map<String, String> playerToName = new HashMap<>();
 	
 	public GraphicsBoard() {
 		redPlayer = new GraphicsPlayer(15, 15, Color.red);
@@ -31,7 +31,18 @@ public class GraphicsBoard extends JComponent  {
 		players.put("y", yellowPlayer);
 		
 		
+		playerToName.put("b", "Blue");
+		playerToName.put("g", "Green");
+		playerToName.put("r", "Red");
+		playerToName.put("y", "Yellow");
 		
+		
+	}
+	
+	
+	public void isOver(String playerColor) { 
+		isOver = true;
+		winner = playerColor;
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -39,11 +50,21 @@ public class GraphicsBoard extends JComponent  {
 		drawBoard(g2D);
 		drawPlayers(g2D);
 		drawStartEnd(g2D);
-		drawDie(g2D);		
+		drawDie(g2D);
+		if(isOver)
+			drawWinner(g2D);
+		repaint();
 	}
 	
 	
-	public void setPos(String player, int pos) {
+	public void drawWinner(Graphics2D g2D) {
+		g2D.setPaint(players.get(winner).getColor());
+		g2D.setFont(new Font("serif", Font.BOLD, 60));
+		g2D.drawString(playerToName.get(winner) + " Player Has Won", 210, 520);
+	}
+	
+	
+	public void setPlayerPos(String player, int pos) {
 		players.get(player).setPos(pos);
 	}
 	
@@ -103,6 +124,7 @@ public class GraphicsBoard extends JComponent  {
 	
 	
 	public void drawStartEnd(Graphics2D g2D) {
+		
 		g2D.setColor(Color.MAGENTA);
 		g2D.setFont(new Font("serif", Font.BOLD, 14));
 		g2D.drawString("START", 480, 890);
