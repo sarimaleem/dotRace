@@ -50,10 +50,6 @@ public class GraphicsRunner implements MouseListener {
         
         if(playerColor.equals("") || race.raceOver() || race.playerHasRolled(playerColor))
         	return;
-       
-        
-        
-        
         
        if(race.movePlayer(playerColor))
     	   board.isOver(playerColor);
@@ -61,8 +57,8 @@ public class GraphicsRunner implements MouseListener {
        int playerPos = race.getTrack().indexOf(playerColor.toUpperCase()) % 34;
        board.setPlayerPos(playerColor, playerPos);
        
-       
-        
+       int dieNum = race.getFace(playerColor);
+       board.setPlayerDiceNum(playerColor, dieNum);
         
      }
 
