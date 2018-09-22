@@ -11,6 +11,8 @@ public class GraphicsPlayer {
 	Ellipse2D.Double circle;
 	Rectangle graphicDie;
 	Color color;
+	int diceNum;
+	boolean hasRolled;
 	
 	public GraphicsPlayer(int adjX, int adjY, Color color) { 
 		
@@ -44,12 +46,33 @@ public class GraphicsPlayer {
 	}
 	
 	public Color getColor() {
+		if(hasRolled)
+			return color.darker();
 		return color;
+	}
+	
+	public void setDiceNum(int num) { 
+		diceNum = num;
+	}
+	
+	public int getDiceNum() { 
+		return diceNum;
+	}
+	
+	public boolean hasRolled() {
+		return hasRolled;
+	}
+	
+	public void rolled() {
+		hasRolled = true;
+	}
+	
+	public void reset() {
+		hasRolled = false;
 	}
 	
 	public void drawEllipse(Graphics2D g2D) {
 		circle.setFrame(getX(), getY(), getHeight(), getWidth());
-		g2D.draw(circle);
 		g2D.setPaint(color);
 		g2D.fill(circle);
 	}

@@ -26,18 +26,14 @@ public class GraphicsRunner implements MouseListener {
 			}
 		}
 		
-		
-		
 		race = new Race();
 		JFrame window = new JFrame("Dot Race");
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setSize(1200, 1000);		
+		window.setSize(1200, 1200);		
 		window.setVisible(true);
 		board = new GraphicsBoard();
 		window.add(board);
 		board.addMouseListener(new GraphicsRunner());
-		
-
 	}
 	
 	
@@ -45,8 +41,6 @@ public class GraphicsRunner implements MouseListener {
         
         String playerColor = dieColors[e.getX()][e.getY()];
         
-        if(race.roundDone())
-        	race.reset();
         
         if(playerColor.equals("") || race.raceOver() || race.playerHasRolled(playerColor))
         	return;
@@ -59,7 +53,13 @@ public class GraphicsRunner implements MouseListener {
        
        int dieNum = race.getFace(playerColor);
        board.setPlayerDiceNum(playerColor, dieNum);
-        
+       
+       board.rolled(playerColor);
+       
+       if(race.roundDone()) {
+       	race.reset();
+       	board.reset();
+       }  
      }
 
      public void mousePressed(MouseEvent e) {
@@ -75,5 +75,4 @@ public class GraphicsRunner implements MouseListener {
 
      public void mouseExited(MouseEvent e) {
      }
-
 }

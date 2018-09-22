@@ -7,7 +7,7 @@ public class TextRunner {
 		Race race = new Race();
 		
 
-		while(true) {
+		while(!race.raceOver()) {
 			if(race.roundDone()) {
 				race.reset();
 			}
@@ -32,7 +32,7 @@ public class TextRunner {
 				System.out.println(race.getTrack());
 				System.out.println("Player " + input + " rolled a " + race.getFace(input));
 				System.out.println("CONGRATULATIONS PLAYER " + input + " HAS WON!!!");
-				break;
+				continue;
 			}	
 			
 			System.out.println("Player " + input +  " rolled a "  + race.getFace(input) + "\n\n\n\n\n\n");
