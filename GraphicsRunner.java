@@ -2,12 +2,11 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
-
 public class GraphicsRunner implements MouseListener {
 	
-	static String[][] dieColors;
-	static Race race;
-	static GraphicsBoard board;
+	private static String[][] dieColors;
+	private static Race race;
+	private static GraphicsBoard board;
 	
 	public static void main(String[] args)  {
 		
@@ -35,10 +34,12 @@ public class GraphicsRunner implements MouseListener {
 		window.add(board);
 		board.addMouseListener(new GraphicsRunner());
 	}
-
+	
+	
 	public void mouseClicked(MouseEvent e) {
         
         String playerColor = dieColors[e.getX()][e.getY()];
+        
         
         if(playerColor.equals("") || race.raceOver() || race.playerHasRolled(playerColor))
         	return;
@@ -60,11 +61,17 @@ public class GraphicsRunner implements MouseListener {
        }  
      }
 
-     public void mousePressed(MouseEvent e) {}
+     public void mousePressed(MouseEvent e) {
+     
+     }
 
-     public void mouseReleased(MouseEvent e) {}
+     public void mouseReleased(MouseEvent e) {
+    	 
+     }
 
-     public void mouseEntered(MouseEvent e) {}
+     public void mouseEntered(MouseEvent e) {
+     }
 
-     public void mouseExited(MouseEvent e) {}
+     public void mouseExited(MouseEvent e) {
+     }
 }

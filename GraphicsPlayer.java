@@ -1,18 +1,16 @@
 import java.awt.Color;
 import java.awt.Graphics2D;
-import java.awt.Rectangle;
 import java.awt.geom.Ellipse2D;
 
 public class GraphicsPlayer {
 	
 	private int pos;
-	int [] xPos = new int[]{490, 390, 290, 190, 90, 90, 90, 90, 90, 90, 90, 90, 190, 290, 390, 490, 590, 690, 790, 890, 990, 990, 990, 990, 990, 990, 990, 990, 890, 790, 690, 590};
-	int [] yPos = new int[]{840, 840, 840, 840, 840, 740, 640, 540, 440, 340, 240, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 240, 340, 440, 540, 640, 740, 840, 840, 840, 840, 840};
-	Ellipse2D.Double circle;
-	Rectangle graphicDie;
-	Color color;
-	int diceNum;
-	boolean hasRolled;
+	private int [] xPos = new int[]{490, 390, 290, 190, 90, 90, 90, 90, 90, 90, 90, 90, 190, 290, 390, 490, 590, 690, 790, 890, 990, 990, 990, 990, 990, 990, 990, 990, 890, 790, 690, 590};
+	private int [] yPos = new int[]{840, 840, 840, 840, 840, 740, 640, 540, 440, 340, 240, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 240, 340, 440, 540, 640, 740, 840, 840, 840, 840, 840};
+	private Ellipse2D.Double circle;
+	private Color color;
+	private int diceNum;
+	private boolean hasRolled;
 	
 	public GraphicsPlayer(int adjX, int adjY, Color color) { 
 		

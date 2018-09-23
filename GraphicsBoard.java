@@ -11,15 +11,12 @@ import javax.swing.JComponent;
 
 public class GraphicsBoard extends JComponent  {
 	
-	GraphicsPlayer redPlayer;
-	GraphicsPlayer bluePlayer;
-	GraphicsPlayer yellowPlayer;
-	GraphicsPlayer greenPlayer;
-	Map<String, GraphicsPlayer> players = new HashMap<String, GraphicsPlayer>();
-	Map<String, Integer[]> diePos = new HashMap<String, Integer[]>();
-	boolean isOver;
-	String winner;
-	Map<String, String> playerToName = new HashMap<>();
+	private GraphicsPlayer redPlayer, bluePlayer, yellowPlayer, greenPlayer;
+	private Map<String, GraphicsPlayer> players = new HashMap<String, GraphicsPlayer>();
+	private Map<String, Integer[]> diePos = new HashMap<String, Integer[]>();
+	private boolean isOver;
+	private String winner;
+	private Map<String, String> playerToName = new HashMap<>();
 	
 	public GraphicsBoard() {
 		redPlayer = new GraphicsPlayer(15, 15, Color.red);
