@@ -8,8 +8,9 @@ import java.awt.Stroke;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JComponent;
+import javax.swing.JPanel;
 
-public class GraphicsBoard extends JComponent  {
+public class GraphicsBoard extends JPanel  {
 	
 	private GraphicsPlayer redPlayer, bluePlayer, yellowPlayer, greenPlayer;
 	private Map<String, GraphicsPlayer> players = new HashMap<String, GraphicsPlayer>();
@@ -19,7 +20,7 @@ public class GraphicsBoard extends JComponent  {
 	private Map<String, String> playerToName = new HashMap<>();
 	
 	public GraphicsBoard() {
-		redPlayer = new GraphicsPlayer(15, 15, Color.red);
+		redPlayer = new GraphicsPlayer(15, 15, Color.RED);
 		bluePlayer = new GraphicsPlayer(-15, -15, new Color(51, 204, 255));
 		greenPlayer = new GraphicsPlayer(15, -15, Color.green);
 		yellowPlayer = new GraphicsPlayer(-15, 15, Color.yellow);

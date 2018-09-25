@@ -10,11 +10,7 @@ public class GraphicsRunner implements MouseListener {
 	
 	public static void main(String[] args)  {
 		
-		dieColors = new String[1200][1000];
-		
-		for(int i = 0; i < 1200; i++) 
-			for(int j = 0; j < 1000; j++)
-				dieColors[i][j] = "";
+		dieColors = new String[2400][1000];
 		
 		for(int i = 0; i < 100; i++) { 
 			for(int j = 0; j < 100; j++) {
@@ -38,11 +34,10 @@ public class GraphicsRunner implements MouseListener {
 	
 	public void mouseClicked(MouseEvent e) {
         
-        String playerColor = dieColors[e.getX()][e.getY()];
+       String playerColor = dieColors[e.getX()][e.getY()]; 
         
-        
-        if(playerColor.equals("") || race.raceOver() || race.playerHasRolled(playerColor))
-        	return;
+       if(playerColor == null || race.raceOver() || race.playerHasRolled(playerColor))
+    	   return;
         
        if(race.movePlayer(playerColor))
     	   board.isOver(playerColor);
@@ -56,22 +51,16 @@ public class GraphicsRunner implements MouseListener {
        board.rolled(playerColor);
        
        if(race.roundDone()) {
-       	race.reset();
-       	board.reset();
+    	   race.reset();
+    	   board.reset();
        }  
      }
 
-     public void mousePressed(MouseEvent e) {
-     
-     }
+     public void mousePressed(MouseEvent e) {}
 
-     public void mouseReleased(MouseEvent e) {
-    	 
-     }
+     public void mouseReleased(MouseEvent e) {}
 
-     public void mouseEntered(MouseEvent e) {
-     }
+     public void mouseEntered(MouseEvent e) {}
 
-     public void mouseExited(MouseEvent e) {
-     }
+     public void mouseExited(MouseEvent e) {}
 }
